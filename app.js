@@ -25,14 +25,25 @@ function getLocation() {
 /*Create leaflet map */
 function buildMap(coordinates) {
     map = L.map('map').setView(coordinates, 13);
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	  minZoom: '15',
     }).addTo(map);
   }
-
 getLocation()
+
+
+class addMarkers {
+  constructor() {
+    this.businesses.forEach(business => {
+      this.markers = L.marker([business.lat, business.long])
+        .bindPopup(`<p1>${business.name}</p1>`)
+        .addTo(this.map);
+    });
+  }
+}
+
+
 /*// get foursquare request function*/
 async function getFoursquare(business) {
 	const options = {
@@ -53,11 +64,11 @@ async function getFoursquare(business) {
 }
 /*add event listeners */
 
-/*document.getElementById('submit').addEventListener('click', async (event) => {
+document.getElementById('submit').addEventListener('click', async (event) => {
 	event.preventDefault()
 	let business = document.getElementById('business').value
 	let data = await getFoursquare(business)
 	map.businesses = processBusinesses(data)
 	map.addMarkers()
-})*/
+})
 
