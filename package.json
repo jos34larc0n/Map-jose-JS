@@ -1,0 +1,19 @@
+{
+  "name": "kool-kids-klub-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jos34larc0n/Map-jose-JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jos34larc0n/Map-jose-JS/issues"
+  },
+  "homepage": "https://github.com/jos34larc0n/Map-jose-JS#readme"
+}
